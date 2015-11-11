@@ -1,0 +1,7 @@
+name: Phil
+spring:
+  datasource:
+    url: jdbc:mysql://
+    username:
+    password:
+    driverClassName: com.mysql.jdbc.Driver
