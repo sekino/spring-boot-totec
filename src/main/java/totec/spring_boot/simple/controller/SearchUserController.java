@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import totec.spring_boot.simple.controller.data.UserDto;
+import totec.spring_boot.simple.controller.data.ResponseUserData;
+import totec.spring_boot.simple.controller.data.RootResponseUserData;
 import totec.spring_boot.simple.domain.model.User;
-import totec.spring_boot.simple.domain.model.UserSample;
-import totec.spring_boot.simple.domain.repository.UserRepository;
+import totec.spring_boot.simple.domain.service.FriendService;
 import totec.spring_boot.simple.domain.service.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,13 +22,28 @@ public class SearchUserController {
 
 	@Autowired
 	UserService userService;
+	@Autowired
+	FriendService friendService;
 
 	@RequestMapping(params = "findByUserId")
-	public UserDto userInfo(@RequestParam("findByUserId") String findByUserId) {
-		List<User> byUserId = userService.findByUserId(findByUserId);
-		UserDto userDto = new UserDto();
-		userDto.setData(userService.findAll());
+	public RootResponseUserData userInfo(@RequestParam("findByUserId") String findByUserId) {
+		List<User> findUsers = userService.findByUserId(findByUserId);
 
-		return userDto;
+		RootResponseUserData rootResponseUserData = new RootResponseUserData();
+		for (User user : findUsers) {
+			List<Integer> friendNos = friendService.listFriendNo(user.getNo());
+			List<User> friends = userService.findAll(friendNos);
+
+			List<String> friendIds = new ArrayList<String>();
+			for (User friend : friends) {
+				friendIds.add(friend.getId());
+			}
+
+			ResponseUserData responseUserData
+					= new ResponseUserData(user.getId(), user.getNo(), friendIds, user.getImage());
+			rootResponseUserData.addData(responseUserData);
+		}
+
+		return rootResponseUserData;
 	}
 }
