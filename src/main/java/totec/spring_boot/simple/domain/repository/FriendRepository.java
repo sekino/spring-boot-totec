@@ -13,6 +13,6 @@ import java.util.List;
  */
 @Repository
 public interface FriendRepository extends JpaRepository<Friend, Integer> {
-	@Query("select f from Friend f where f.self = :selfNo")
+	@Query("select f.friend from Friend f where f.self = :selfNo")
 	public List<Integer> listFriendNo(@Param("selfNo") int selfNo);
 }
