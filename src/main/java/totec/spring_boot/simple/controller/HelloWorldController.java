@@ -19,42 +19,42 @@ import java.util.List;
 @RestController
 public class HelloWorldController {
 
-	Logger log = LoggerFactory.getLogger(HelloWorldController.class);
-
-	@Autowired
-	private UserService userService;
-	@Autowired
-	private RedisTemplate<String, Object> redisTemplate;
-
-	@RequestMapping("/")
-	@ResponseBody
-	public String top() {
+//	Logger log = LoggerFactory.getLogger(HelloWorldController.class);
+//
+//	@Autowired
+//	private UserService userService;
+//	@Autowired
+//	private RedisTemplate<String, Object> redisTemplate;
+//
+//	@RequestMapping("/")
+//	@ResponseBody
+//	public String top() {
+////		UserSample userSample = userService.getUser(82);
+////		log.info(userSample.toString());
+////
+////		List<UserSample> userSamples = userService.findUsers("hagiwara_naoki", "A12694");
+////		for (UserSample findUserSample : userSamples) {
+////			log.info(findUserSample.toString());
+////		}
+//
+////		redisTemplate.opsForValue().set(Integer.toString(82), userSample);
+//
+//		return "Hello, Spring Boot";
+//	}
+//
+//	@RequestMapping("/tes")
+//	public Hoge tes() {
 //		UserSample userSample = userService.getUser(82);
 //		log.info(userSample.toString());
+//		Hoge hoge = new Hoge();
+//		hoge.setName(userSample.getUser_name());
+//		hoge.setNum(userSample.getUser_employee_number());
+//		return hoge;
+//	}
 //
-//		List<UserSample> userSamples = userService.findUsers("hagiwara_naoki", "A12694");
-//		for (UserSample findUserSample : userSamples) {
-//			log.info(findUserSample.toString());
-//		}
-
-//		redisTemplate.opsForValue().set(Integer.toString(82), userSample);
-
-		return "Hello, Spring Boot";
-	}
-
-	@RequestMapping("/tes")
-	public Hoge tes() {
-		UserSample userSample = userService.getUser(82);
-		log.info(userSample.toString());
-		Hoge hoge = new Hoge();
-		hoge.setName(userSample.getUser_name());
-		hoge.setNum(userSample.getUser_employee_number());
-		return hoge;
-	}
-
-	@RequestMapping("/get")
-	public UserSample get() {
-		UserSample userSample = (UserSample)redisTemplate.opsForValue().get("82");
-		return userSample;
-	}
+//	@RequestMapping("/get")
+//	public UserSample get() {
+//		UserSample userSample = (UserSample)redisTemplate.opsForValue().get("82");
+//		return userSample;
+//	}
 }
