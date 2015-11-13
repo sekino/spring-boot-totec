@@ -1,0 +1,76 @@
+
+/* ユーザー情報枠 */
+.user-info {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+}
+.user-info-content {
+  width: 50%;
+}
+
+.friend-btn {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid #398BC5;
+  color: #398BC5;
+  text-align: center;
+  padding: 8px;
+}
+
+/* フレンドリスト */
+.friend-list-box {
+  border: 1px solid silver;
+  margin-top: 10px;
+  margin: 6px;
+}
+.friend-list {
+  border-top: 1px solid silver;
+  padding: 4px 0px;
+}
+.friend-list:first-child {
+  border: none;
+}
+
+/* listの中身 */
+.friend-info {
+  display: -webkit-box;
+}
+
+
+.reccomended-area {
+  clear: both;
+  width: 100%;
+}
+
+.post-area {
+  clear: both;
+  width: 100%;
+}
+
+.col-xs-3 {
+  float: left;
+  width: 80px;
+  text-align: center;
+}
+
+.item-list-box {
+  overflow: auto;
+  padding: 5px 0px;
+}
+
+.nav-bottom {
+  clear: both;
+  background: #212121;
+  color: white;
+  padding: 6px;
+}
+
+/* もっと見る */
+.more-list {
+  text-align: right;
+}
+.more-btn {
+  margin-right: 10px;
+  padding: 4px;
+  color: #398BC5;
+}

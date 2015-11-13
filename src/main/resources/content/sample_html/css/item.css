@@ -1,0 +1,38 @@
+/* アイテムページ */
+
+
+/* ユーザー情報枠 */
+.user-info {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+}
+.user-info-content {
+  width: 50%;
+}
+
+.friend-btn {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid #398BC5;
+  color: #398BC5;
+  text-align: center;
+  padding: 8px;
+}
+
+/* アイテム情報枠 */
+.item-info {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+}
+.item-info-content {
+  width: 50%;
+}
+
+.item-buy-btn {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid #398BC5;
+  color: #398BC5;
+  text-align: center;
+  padding: 8px;
+}
