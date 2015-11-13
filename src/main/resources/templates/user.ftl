@@ -1,157 +1,140 @@
 <!DOCTYPE html>
 <html>
-
-	<#-- 必要な値まとめ -->
-  <#assign userId = "Uaaas000000">
-  <#assign userPublicScore = "80">
-  <#assign userImage = "img/user/Us000000">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-
-    <title>ユーザー: ${userId!?html}のページ</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/user.css">
+    <title>ユーザー: ${userId}のページ</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/primer/2.4.0/primer.css"> -->
+    <link href='/css/css_family_Raleway500.css' rel='stylesheet'>
+    <style>
+      .app {
+        color: #333;
+      }
+      .logo {
+        font-family: 'Raleway', sans-serif;
+      }
+    </style>
     <script src="/js/jquery-2.1.4.js"></script>
+    <script src="/js/bootstrap.js"></script>
   </head>
   <body>
     <div class="app">
 
       <!-- Navbar content -->
-      <nav class="navbar cm-mlr4 cm-br3 cm-head">
-        <p class="cm-pt4">Amezon.com</p>
+      <nav class="navbar navbar-light logo" style="background-color: #e3f2fd;">
+        Amezon.com
       </nav>
 
       <!-- breadcrumb -->
-      <section class="breadcrumb cm-mlr4 cm-br3 cm-head" style="background-color: rgba(1, 1, 1, .05);">
-        <div class="cm-pt4">
-          <div class="breadcrumb_item"><a href="#">Home</a></div>
-          <div class="breadcrumb_item"><span class="bredcrumb-space">/</span><a href="#">Users</a></div>
-          <div class="breadcrumb_item active"><span class="bredcrumb-space">/</span>${userId!?html}</div>
-        </div>
-      </section>
+      <ol class="breadcrumb" style="background-color: rgba(1, 1, 1, .05);">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li class="active">${userId}</li>
+      </ol>
 
       <!-- container -->
-      <section id="container">
+      <div class="container">
 
         <!-- User Info -->
-        <div class="user-info cm-m12">
-          <div class="user-info-content cm-text-center">
-            <img src="${userImage}" class="img-circle" width="100" height="100" alt="${userId!?html}のサムネイル画像">
+        <div class="row p-a-md">
+          <div class="text-center col-xs-6">
+            <img src="/img/user/Us000000.png" class="img-circle" width="100" height="100" alt="Us000000のサムネイル画像">
           </div>
-          <div class="user-info-content cm-text-left">
-            <p>${userId!?html}</p>
-            <p>スコア: ${userPublicScore!?html}</p>
+          <div class="col-xs-6">
+            <p>Us000000</p>
+            <p>スコア: ${userPublicScore}</p>
           </div>
         </div>
-
-        <div class="friend-btn cm-br3">
-          <div class="btn btn-primary-outline btn-lg btn-block">フレンド申請する</div>
+        <div class="m-b-md">
+          <button type="button" class="btn btn-primary-outline btn-lg btn-block">フレンド申請する</button>
         </div>
-      </section>
+      </div>
 
       <!-- Friends -->
-      <div class="friends-area cm-m12">
-
-        <h5 class="cm-ml4">フレンド<span class="cm-noti">4</span></h5>
-
-        <!-- userFriendsから値を取る -->
-        <ul class="friend-list-box cm-br3">
-
-          <!-- ここがフレンドの数によって繰り返される -->
-          <li class="friend-list cm-br3">
-            <div class="friend-info">
-              <div class="friend-thumnail cm-ml16">
-                <img src="img/user/Us000001.png" alt="Us000001のサムネイル画像" class="img-circle" width="24" height="24">
-              </div>
-              <div class="friend-name cm-ml16">user00001</div>
+      <div class="friends">
+        <h5 class="p-a">フレンド <span class="label label-pill label-default">4</span></h5>
+        <div class="list-group">
+          <button type="button" class="list-group-item">
+            <a href="#" style="color: #333;">
+              <img src="/img/user/Us000001.png" alt="Us000001のサムネイル画像" class="img-circle m-r" width="24" height="24">Us000001
+            </a>
+          </button>
+          <button type="button" class="list-group-item">
+            <a href="#" style="color: #333;">
+              <img src="/img/user/Us000002.png" alt="Us000002のサムネイル画像" class="img-circle m-r" width="24" height="24">Us000002
+            </a>
+          </button>
+          <button type="button" class="list-group-item">
+            <a href="#" style="color: #333;">
+              <img src="/img/user/Us000003.png" alt="Us000003のサムネイル画像" class="img-circle m-r" width="24" height="24">Us000003
+            </a>
+          </button>
+          <button type="button" class="list-group-item">
+            <div class="text-right">
+              <a href="#">もっと見る</a>
             </div>
-          </li>
-          <li class="friend-list">
-            <div class="friend-info">
-              <div class="friend-thumnail cm-ml16">
-                <img src="img/user/Us000001.png" alt="Us000001のサムネイル画像" class="img-circle" width="24" height="24">
-              </div>
-              <div class="friend-name cm-ml16">user00001</div>
-            </div>
-          </li>
-          <li class="friend-list">
-            <div class="friend-info">
-              <div class="friend-thumnail cm-ml16">
-                <img src="img/user/Us000001.png" alt="Us000001のサムネイル画像" class="img-circle" width="24" height="24">
-              </div>
-              <div class="friend-name cm-ml16">user00001</div>
-            </div>
-          </li>
-
-          <!-- フレンドがいなかったら表示しない -->
-          <li class="friend-list more-list">
-            <p class="more-btn">もっと見る</p>
-          </li>
-
-        </ul>
-
+          </button>
+        </div>
       </div>
 
       <!-- Reccomended Items -->
-      <div class="reccomended-area cm-m12">
-        <h5 class="cm-ml4">このユーザーのおすすめ商品</h5>
-        <div class="item-list-box">
-          <div class="col-xs-3">
-            <img src="img/item/It000000.png" alt="商品It000000のサムネイル画像" class="img-rounded" width="48" height="48">
+      <div class="items">
+        <h5 class="p-a">このユーザーのおすすめ商品</h5>
+        <div class="row p-l p-r m-r-0">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000000.png" alt="商品It000000のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000001.png" alt="商品It000001のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000001.png" alt="商品It000001のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000002.png" alt="商品It000002のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000002.png" alt="商品It000002のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000003.png" alt="商品It000003のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000003.png" alt="商品It000003のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000004.png" alt="商品It000004のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000004.png" alt="商品It000004のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000005.png" alt="商品It000005のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000005.png" alt="商品It000005のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000006.png" alt="商品It000006のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000006.png" alt="商品It000006のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
         </div>
       </div>
 
       <!-- Recent Posts -->
-      <div class="post-area cm-m12">
-        <h5 class="cm-ml4">最近投稿されたレビュー</h5>
-        <div class="item-list-box">
-          <div class="col-xs-3">
-            <img src="img/item/It000000.png" alt="商品It000000のサムネイル画像" class="img-rounded" width="48" height="48">
+      <div class="posts">
+        <h5 class="p-a">最近投稿されたレビュー</h5>
+        <div class="row p-l p-r">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000000.png" alt="商品It000000のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000001.png" alt="商品It000001のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000001.png" alt="商品It000001のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000002.png" alt="商品It000002のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000002.png" alt="商品It000002のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000003.png" alt="商品It000003のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000003.png" alt="商品It000003のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000004.png" alt="商品It000004のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000004.png" alt="商品It000004のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000005.png" alt="商品It000005のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000005.png" alt="商品It000005のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
-          <div class="col-xs-3">
-            <img src="img/item/It000006.png" alt="商品It000006のサムネイル画像" class="img-rounded" width="48" height="48">
+          <div class="col-xs-3 p-a-0 p-b text-center">
+            <img src="/img/item/It000006.png" alt="商品It000006のサムネイル画像" class="img-rounded" width="48" height="48">
           </div>
         </div>
       </div>
 
-
-      <nav class="nav-bottom cm-mlr4 cm-br3">
+      <nav class="navbar navbar-light bg-inverse">
         &copy; 2015 Amezon.com
       </nav>
 
