@@ -26,7 +26,7 @@ public class SearchUserController {
 	public UserDto userInfo(@RequestParam("findByUserId") String findByUserId) {
 		List<User> byUserId = userService.findByUserId(findByUserId);
 		UserDto userDto = new UserDto();
-		userDto.setData(byUserId);
+		userDto.setData(userService.findAll());
 
 		return userDto;
 	}
