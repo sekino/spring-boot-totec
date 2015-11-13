@@ -49,7 +49,7 @@
             <img src="/img/item/It000000.png" class="img-rounded" width="100" height="100" alt="商品It000000のサムネイル画像">
           </div>
           <div class="col-xs-6">
-            <p>It000000</p>
+            <p>${postId}</p>
             <p class="m-b-0">アップル</p>
             <p class="m-b-0">売上個数: 87</p>
             <p>23,567円</p>

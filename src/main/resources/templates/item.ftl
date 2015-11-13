@@ -31,7 +31,7 @@
       <ol class="breadcrumb" style="background-color: rgba(1, 1, 1, .05);">
         <li><a href="#">Home</a></li>
         <li><a href="#">Items</a></li>
-        <li class="active">It000000</li>
+        <li class="active">${itemId}</li>
       </ol>
 
       <!-- container -->
@@ -43,10 +43,10 @@
             <img src="/img/item/It000000.png" class="img-rounded" width="100" height="100" alt="商品It000000のサムネイル画像">
           </div>
           <div class="col-xs-6">
-            <p>It000000</p>
-            <p class="m-b-0">アップル</p>
-            <p class="m-b-0">売上個数: 87</p>
-            <p>23,567円</p>
+            <p>${itemId}</p>
+            <p class="m-b-0">${itemSupplier}</p>
+            <p class="m-b-0">売上個数: ${itemSoldQuantity}</p>
+            <p>${itemSalePrice}円</p>
             <p>
               <span class="label label-pill label-warning">工具</span>
               <span class="label label-pill label-warning">ドリル</span>
