@@ -10,53 +10,45 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User {
+
 	@Id
-	private String userId;
-	private int userNo;
-	private int userPublicScore;
-	private String userFriends; // ,区切りのユーザID
-	private String userImage;
+	private int no;
+	private String id;
+	private int score;
+	private String image;
 
 	public User() {
 	}
 
-	public String getUserId() {
-		return userId;
+	public int getNo() {
+		return no;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
-	public int getUserNo() {
-		return userNo;
+	public String getId() {
+		return id;
 	}
 
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public int getUserPublicScore() {
-		return userPublicScore;
+	public int getScore() {
+		return score;
 	}
 
-	public void setUserPublicScore(int userPublicScore) {
-		this.userPublicScore = userPublicScore;
+	public void setScore(int score) {
+		this.score = score;
 	}
 
-	public String getUserFriends() {
-		return userFriends;
+	public String getImage() {
+		return image;
 	}
 
-	public void setUserFriends(String userFriends) {
-		this.userFriends = userFriends;
-	}
-
-	public String getUserImage() {
-		return userImage;
-	}
-
-	public void setUserImage(String userImage) {
-		this.userImage = userImage;
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

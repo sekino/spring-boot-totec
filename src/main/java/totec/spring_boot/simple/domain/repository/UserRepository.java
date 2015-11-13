@@ -15,6 +15,6 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-	@Query("select u from User u where u.userId like :userId%")
-	public List<User> findByUserId(@Param("userId") String userId);
+	@Query("select u from User u where u.id like :id%")
+	public List<User> findByUserId(@Param("id") String userId);
 }
