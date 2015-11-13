@@ -14,6 +14,7 @@ import java.util.List;
 @RequestMapping("/item")
 @RestController
 public class ItemController {
+
 	@RequestMapping(value = "/{itemId}")
 	public static String userInfo(@PathVariable String itemId, Model model) {
 		System.out.println("---------------" + itemId);
