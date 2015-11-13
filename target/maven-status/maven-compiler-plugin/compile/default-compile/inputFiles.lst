@@ -1,3 +1,7 @@
 /Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/SampleSimpleApplication.java
+/Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/domain/repository/UserRepository.java
 /Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/domain/service/HelloWorldService.java
-/Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/domain/controller/HelloWorldController.java
+/Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/controller/HelloWorldController.java
+/Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/App.java
+/Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/domain/model/User.java
+/Users/A13117/IJ/spring_boot/src/main/java/totec/spring_boot/simple/domain/service/UserService.java

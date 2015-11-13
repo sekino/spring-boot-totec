@@ -1,3 +1,7 @@
+totec/spring_boot/simple/controller/HelloWorldController.class
+totec/spring_boot/simple/domain/repository/UserRepository.class
 totec/spring_boot/simple/domain/service/HelloWorldService.class
-totec/spring_boot/simple/domain/controller/HelloWorldController.class
 totec/spring_boot/simple/SampleSimpleApplication.class
+totec/spring_boot/simple/domain/model/User.class
+totec/spring_boot/simple/domain/service/UserService.class
+totec/spring_boot/simple/App.class

@@ -4,29 +4,57 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * @author akano_yuki on 2015/11/11.
+ * @author akano_yuki on 2015/11/13.
  */
-
 @Entity
 public class User {
-
 	@Id
-	private String name;
-	private int age;
+	private String userId;
+	private int userNo;
+	private int userPublicScore;
+	private String userFriends; // ,区切りのユーザID
+	private String userImage;
 
-	public String getName() {
-		return name;
+	public User() {
 	}
 
-	public int getAge() {
-		return age;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public int getUserNo() {
+		return userNo;
+	}
+
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
+	}
+
+	public int getUserPublicScore() {
+		return userPublicScore;
+	}
+
+	public void setUserPublicScore(int userPublicScore) {
+		this.userPublicScore = userPublicScore;
+	}
+
+	public String getUserFriends() {
+		return userFriends;
+	}
+
+	public void setUserFriends(String userFriends) {
+		this.userFriends = userFriends;
+	}
+
+	public String getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
 	}
 }
