@@ -4,7 +4,7 @@
 	<#-- 必要な値まとめ -->
   <#assign userId = "Uaaas000000">
   <#assign userPublicScore = "80">
-  <#assing userImage = "img/user/Us000000">
+  <#assign userImage = "img/user/Us000000">
 
   <head>
     <meta charset="utf-8">
