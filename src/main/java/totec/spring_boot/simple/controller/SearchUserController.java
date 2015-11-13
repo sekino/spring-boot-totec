@@ -34,7 +34,13 @@ public class SearchUserController {
 		for (User user : findUsers) {
 			List<Integer> friendNos = friendService.listFriendNo(user.getNo());
 			System.out.println("friendNos " + friendNos.size());
-			List<User> friends = userService.findAll(friendNos);
+			List<User> friends = new ArrayList<User>();
+			for (int friendNo : friendNos) {
+				User friend = userService.getUser(friendNo);
+				if (friend != null) {
+					friends.add(friend);
+				}
+			}
 			System.out.println("friends " + friends.size());
 
 			List<String> friendIds = new ArrayList<String>();
