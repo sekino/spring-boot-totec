@@ -28,11 +28,14 @@ public class SearchUserController {
 	@RequestMapping(params = "findByUserId")
 	public RootResponseUserData userInfo(@RequestParam("findByUserId") String findByUserId) {
 		List<User> findUsers = userService.findByUserId(findByUserId);
+		System.out.println("findUsers " + findUsers.size());
 
 		RootResponseUserData rootResponseUserData = new RootResponseUserData();
 		for (User user : findUsers) {
 			List<Integer> friendNos = friendService.listFriendNo(user.getNo());
+			System.out.println("friendNos " + friendNos.size());
 			List<User> friends = userService.findAll(friendNos);
+			System.out.println("friends " + friends.size());
 
 			List<String> friendIds = new ArrayList<String>();
 			for (User friend : friends) {
