@@ -2,11 +2,13 @@ package totec.spring_boot.simple.domain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author akano_yuki on 2015/11/13.
  */
 @Entity
+@Table(name = "user")
 public class User {
 	@Id
 	private String userId;
